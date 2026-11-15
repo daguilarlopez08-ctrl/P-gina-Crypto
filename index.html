@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es" data-accent="violet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meridiano — Terminal de análisis de mercado</title>
+<meta name="description" content="Terminal de análisis de criptomonedas y acciones: técnico, fundamental, noticias, escenarios y gestión de riesgo. Herramienta de análisis, no asesoría financiera.">
+<meta name="theme-color" content="#07070c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#panorama" aria-label="Meridiano, inicio">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 4-8 5 9" /><circle cx="12" cy="12" r="10.2"/></svg></span>
+      <span class="brand-name">Meridiano</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Módulos"></nav>
+    <div class="side-foot">Herramienta de análisis,<br>no asesoría financiera.</div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="search" id="searchBox">
+        <svg viewBox="0 0 24 24" class="search-ico"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="searchInput" type="search" autocomplete="off" spellcheck="false" placeholder="Busca una cripto o acción: Bitcoin, ETH, Apple, NVDA…" aria-label="Buscar activo">
+        <kbd class="only-desktop">/</kbd>
+        <div class="dropdown" id="searchDrop" hidden></div>
+      </div>
+      <div class="seg" id="curSeg" role="group" aria-label="Moneda">
+        <button data-cur="USD">USD</button><button data-cur="CLP">CLP</button>
+      </div>
+    </header>
+
+    <main id="views">
+      <section class="view" id="view-panorama">
+        <div class="hero">
+          <canvas id="heroCanvas" aria-hidden="true"></canvas>
+          <div class="hero-content">
+            <div class="eyebrow">Panorama del mercado</div>
+            <h1 id="heroTitle">Leyendo el mercado…</h1>
+            <p id="heroSub" class="muted">Capitalización, sentimiento, índices y movimientos del día en un solo lugar.</p>
+            <div class="chips" id="heroChips"></div>
+          </div>
+        </div>
+        <div id="panoramaBody"></div>
+      </section>
+      <section class="view" id="view-activo"></section>
+      <section class="view" id="view-tecnico"></section>
+      <section class="view" id="view-escenarios"></section>
+      <section class="view" id="view-noticias"></section>
+      <section class="view" id="view-fundamental"></section>
+      <section class="view" id="view-screener"></section>
+      <section class="view" id="view-comparador"></section>
+      <section class="view" id="view-watchlist"></section>
+      <section class="view" id="view-comprar"></section>
+      <section class="view" id="view-riesgo"></section>
+      <section class="view" id="view-aprender"></section>
+      <section class="view" id="view-config"></section>
+    </main>
+
+    <footer class="foot">
+      <span>Herramienta de análisis, no asesoría financiera. Los niveles de precio son escenarios posibles, no predicciones.</span>
+      <span id="fxNote"></span>
+    </footer>
+  </div>
+</div>
+
+<div id="popover" class="popover" hidden></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/lightweight-charts.js"></script>
+<script src="js/core.js"></script>
+<script src="js/api.js"></script>
+<script src="js/indicators.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/hero3d.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/views-market.js"></script>
+<script src="js/views-asset.js"></script>
+<script src="js/views-tools.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
